@@ -1,0 +1,7 @@
+Extra Credit : What if we threw in Hammer as a choice?  How would you represent more than 3 choices?
+
+If we add only one extra option, it will lead to an issue, when one player has more chances to win, 
+because in this case we cannot keep the probability of wins, losses and draws for each player in a balance, 
+in other words one choice will have more chances to win while the others - less.
+It means that for every choice you have to have an even number of extra moves, keeping the total number of choices odd.
+So we cannot add only one extra choice, it should be two, four, six etc.

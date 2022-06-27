@@ -1,0 +1,21 @@
+<html>
+<body>
+    <% modal_title = yield(:modal_title) %>
+    <% if modal_title.present? %>
+        <div class="modal-header">
+          <div class="modal-title"><%= yield(:modal_title) %></div>
+        </div>
+    <% end %>
+
+    <div class="modal-body">
+      <%= yield %>
+
+      <% modal_buttons_html = yield(:modal_buttons) %>
+      <% if modal_buttons_html.present? %>
+          <div class="modal-buttons">
+            <%= modal_buttons_html %>
+          </div>
+      <% end %>
+    </div>
+</body>
+</html>

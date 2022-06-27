@@ -1,0 +1,32 @@
+<%
+def result_message
+  case @result
+    when 0
+      "It's a draw!"
+    when 1
+      "You won!"
+    else
+      "You lost!"
+  end
+end
+%>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="game-title">ROCK – PAPER – SCISSORS</h1>
+    <p class="game-subtitle">Rock Paper Scissors is a zero sum game that is usually played by two people using their hands and no tools.
+       The idea is to make shapes with an outstretched hand where each shape will have a certain degree of power and will lead
+       to an outcome.
+    </p>
+<%= form_tag game_path, method: :post, remote: true do %>
+    <%= select_tag(:user_bet, options_for_select(@throw_options)) %>
+    <%= button_to 'Go!', game_path, method: :post  %>
+<% end %>
+<% if @result %>
+  <div>
+    <h2>Your bet <%= @user_bet %></h2>
+    <h2>Computer bet <%= @computer_bet %></h2>
+    <h2 class="result"><%= result_message %></h2>
+  </div>
+<% end %>
+</div>
+</div>
