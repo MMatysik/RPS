@@ -5,10 +5,10 @@ describe GameResultService do
   let(:service)   { GameResultService.new(user_bet) }
   let(:json_parser_error) { 'RPS API - Empty or unparsable response returned' }
   let(:result_arr) { [1, 0, -1] }
-  
+
   describe '#run' do
     context 'API returns status code 200' do
-      context 'API response not empty' do
+      context 'API response is parsable' do
         before do
           stub_request(:get, "#{ENV['RPS_API_URL']}/throw")
             .to_return(
@@ -28,7 +28,7 @@ describe GameResultService do
         end
       end
 
-      context 'API response is empty' do
+      context 'API response is unparsable' do
         it 'log error and returns result message and computer bet' do
           expect(Rails.logger).to receive(:error).with(json_parser_error)
           stub_request(:get, "#{ENV['RPS_API_URL']}/throw")

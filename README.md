@@ -22,14 +22,15 @@ RockPaperScissors is a web-based application that allows user to play rock-paper
 # Get dependencies
 # Update the packages index
 $ sudo apt update
-# Install ruby version 2.6.10
-$ rvm install 2.6.10 # (or rbenv install 2.6.10)
+# Install ruby version 3.0.4
+$ rvm install 3.0.4 # (or rbenv install 3.0.4)
 $ sudo gem install bundler
 $ sudo apt-get install git
+$ apt-get install shared-mime-info
 
 # Download the code and set up Rails.
-$ git clone git@github.com:MMatysik/RockPaperScissors.git
-$ cd RockPaperScissors
+$ git clone git@github.com:MMatysik/RPS.git
+$ cd RPS
 
 # Continue app setup
 $ bundle install

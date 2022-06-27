@@ -1,4 +1,0 @@
-<%= form_tag game_path, method: :post, remote: true do %>
-    <%= select_tag(:user_bet, options_for_select(@throw_options)) %>
-    <%= button_to 'Go!', game_path, method: :post  %>
-<% end %>
